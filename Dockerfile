@@ -5,6 +5,8 @@ RUN apk update \
     && apk add curl \
     && rm -rf /var/cache/apk/*
 RUN mkdir /usr/etc
+RUN mkdir /var/spool/squid3
+RUN mkdir /var/spool/squid
 RUN /usr/lib/squid/ssl_crtd -c -s /var/lib/ssl_db
 COPY squid.conf /etc/squid/squid.conf
 COPY transparent-cert.pem /etc/squid/ssl_cert/transparent-cert.pem

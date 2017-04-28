@@ -4,6 +4,8 @@ CHOWN=$(/usr/bin/which chown)
 SQUID=$(/usr/bin/which squid)
 "$CHOWN" -R squid:squid /var/cache/squid
 "$CHOWN" -R squid:squid /var/log/squid
+"$CHOWN" -R squid:squid /var/spool/squid3
+"$CHOWN" -R squid:squid /var/spool/squid
 squid -N $*
 exec tail -F /var/log/squid/cache.log
 

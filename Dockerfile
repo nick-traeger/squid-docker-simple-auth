@@ -3,7 +3,6 @@ MAINTAINER Evan Sarmiento <evansarm@gmail.com>
 RUN apk update \
     && apk add squid=3.5.23-r0 \
     && apk add curl \
-    && apk add apache2-utils \
     && rm -rf /var/cache/apk/*
 RUN mkdir /usr/etc
 RUN /usr/lib/squid/ssl_crtd -c -s /var/lib/ssl_db

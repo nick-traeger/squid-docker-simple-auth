@@ -1,0 +1,17 @@
+version: '2'
+services:
+  proxy: 
+    build: .
+    container_name: squid
+    ports:
+      - "3128:3128"
+      - "3129:3129"
+    depends_on:
+      - dns
+    dns:
+      - PUBLICIPHERE
+  dns:
+    image: 'drebes/bind'
+    container_name: bind
+    ports:
+      - "53:53/udp"

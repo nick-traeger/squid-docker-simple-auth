@@ -3,6 +3,7 @@ MAINTAINER Evan Sarmiento <evansarm@gmail.com>
 RUN apk update \
     && apk add squid=3.5.23-r0 \
     && apk add curl \
+    && apk add apache2-utils \
     && rm -rf /var/cache/apk/*
 RUN mkdir /usr/etc
 RUN mkdir /var/spool/squid3
